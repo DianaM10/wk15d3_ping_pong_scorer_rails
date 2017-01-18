@@ -4,7 +4,8 @@ class GamesController < ApplicationController
     games = Game.all
     render json: games.as_json({
       include: [
-        { team_a_player1: {only: :nickname } }
+        { team_a_player1: {only: :nickname } },
+        { team_b_player1: {only: :nickname} }
       ]
     })
     
